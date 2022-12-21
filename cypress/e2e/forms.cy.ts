@@ -13,4 +13,9 @@ describe('e-lab, forms',()=>{
         cy.get('#chkPeopleTerms').click()
         cy.get('#btnSave').should('be.enabled')
     })
+
+    it('should show data warning after accepting terms and conditions',()=>{
+        cy.get('#chkPeopleTerms').click()
+        cy.get('#dataWarning').should('have.text',"The form data isn't stored anywhere!")
+    })
 })
