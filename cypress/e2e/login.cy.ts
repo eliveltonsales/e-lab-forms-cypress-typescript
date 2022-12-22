@@ -2,7 +2,7 @@ import {username,password} from '../fixtures/user.json'
 describe('e-lab, forms',()=>{
    
     beforeEach(()=>{        
-        cy.visit('https://www.elivelton.qa/login.php')
+        cy.visit('http://localhost:8081/login.php')
     })
     
     it('should login',()=>{           
@@ -17,5 +17,15 @@ describe('e-lab, forms',()=>{
         cy.get('#txtPassword').type('***')
         cy.get('#btnLogin').click()
         cy.get('.loginfail').should('have.text','Invalid Credentials!')
+    })
+
+    it('should redirect to guide page',()=>{
+        cy.get('#btnHelp').click()
+        cy.contains('h4','about')
+        cy.contains('h4','how to use')
+        cy.contains('h4','projects')
+        cy.contains('h4','how to contribute')
+        cy.contains('h4','contact')
+        cy.contains('h4','credits')
     })
 })
