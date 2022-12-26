@@ -18,4 +18,17 @@ describe('e-lab, forms',()=>{
         cy.get('#chkPeopleTerms').click()
         cy.get('#dataWarning').should('have.text',"The form data isn't stored anywhere!")
     })
+
+    it('should be able to save form',()=>{
+        cy.get('#txtPeopleName').type('Teste')
+        cy.get('#txtPeopleNickname').type('Teste')
+        cy.get('#txtPeopleEmail').type('Teste@teste.com')
+        cy.get('#txtPeoplePassword').type('teste')
+        cy.get('#txtPeopleCitizenID').type('111')
+        cy.get('#txtPeoplePhone').type('111')
+        cy.get('#chkPeopleTerms').click()
+        cy.get('#btnSave').click()
+        cy.get('#txtPeopleName').should('be.empty')
+        cy.get('#dataWarning').should('not.be.visible')
+    })
 })
