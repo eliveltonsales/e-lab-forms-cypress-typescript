@@ -2,7 +2,7 @@ import {username,password} from '../fixtures/user.json'
 describe('e-lab, forms',()=>{
    
     beforeEach(()=>{        
-        cy.visit('http://localhost:8081/login.php')
+        cy.visit('http://elivelton.qa/login.php')
     })
     
     it('should login',()=>{           
