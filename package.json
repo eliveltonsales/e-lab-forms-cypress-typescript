@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "cypress": "^13.6.0",
+    "cypress": "^13.6.1",
     "typescript": "^5.3.2"
   }
 }
